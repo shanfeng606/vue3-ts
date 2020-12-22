@@ -48,10 +48,10 @@ export default {
   }
   > .content {
     flex-grow: 1;
-    padding-top: 60px;
-    padding-left: 156px;
+    padding-top: 50px;
+    // padding-left: 156px;
     @media (max-width: 500px) {
-      padding-left: 0; 
+      padding-left: 0;
     }
   }
 }
@@ -70,10 +70,6 @@ aside {
   background: lightblue;
   width: 150px;
   padding: 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 70px;
   height: 100%;
   > h2 {
     margin-bottom: 4px;
@@ -82,6 +78,12 @@ aside {
     > li {
       padding: 4px 0;
     }
+  }
+  @media (max-width: 500px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
   }
 }
 main {
