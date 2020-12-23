@@ -1,5 +1,5 @@
 <template>
     <div>
         TabsDemo
-    <div>
+    </div>
 </template>

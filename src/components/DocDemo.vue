@@ -1,5 +1,5 @@
 <template>
     <div>
         DocDemo
-    <div>
+    </div>
 </template>
