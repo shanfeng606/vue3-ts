@@ -1,19 +1,24 @@
 
 <template>
-  <button @click="toggle" :class="{checked}">
-    <span></span>
-  </button>
+  <div>
+    <button @click="toggle" :class="{checked:value}">
+      <span></span>
+    </button>
+    <div>{{value}}</div>
+  </div>
 </template>
 
 <script lang='ts'>
 import { ref } from "vue";
 export default {
-  setup() {
-    const checked = ref(false);
+  props: {
+    value: Boolean
+  },
+  setup(props,context) {
     const toggle = () => {
-      checked.value = !checked.value;
+      context.emit('input',!props.value)
     };
-    return { checked, toggle };
+    return { toggle };
   }
 };
 </script>
@@ -43,9 +48,9 @@ button.checked {
   background: blue;
 }
 button.checked > span {
-  left:calc(100% - #{$h2} - 2px);
+  left: calc(100% - #{$h2} - 2px);
 }
-button:focus{
-    outline:none;
+button:focus {
+  outline: none;
 }
 </style>
