@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="toggle" :class="{checked:value}">
+    <button class="vue3-switch" @click="toggle" :class="{'vue3-checked':value}">
       <span></span>
     </button>
   </div>
@@ -21,10 +21,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 $h: 22px;
 $h2: $h - 4px;
-button {
+.vue3-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -41,7 +41,7 @@ button {
     border-radius: $h2 / 2;
     transition: all 250ms;
   }
-  &.checked {
+  &.vue3-checked {
     background: #1890ff;
     > span {
       left: calc(100% - #{$h2} - 2px);
@@ -55,7 +55,7 @@ button {
       width: $h2 + 4px;
     }
   }
-  &.checked:active {
+  &.vue3-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;
